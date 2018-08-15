@@ -15,7 +15,7 @@
 	      type="image/ico" 
 	      href="https://cdn.pbrd.co/images/GXnzxRu.x-icon">
 		<!-- Page Title -->
-        <title>Seedha Saadha</title>		
+        <title id="titleName">Seedha Saadha</title>		
 		<!-- Meta Description -->
         <meta name="description" content="Seedha Saadha Youtube Channel">
         <meta name="keywords" content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
@@ -78,7 +78,7 @@
 
                 <nav class="collapse navbar-collapse navbar-right" role="navigation">
                 	<ul class=" nav navbar-nav text-center">
-						<li class="current"><a href="hindi_index.html"><h4>हिंदी में</h4></a></li>
+						<li class="current"><a id="languageText"><h4>हिंदी में</h4></a></li>
 					</ul>
                 </nav>
             </div>
@@ -102,10 +102,10 @@
 					<!-- single slide -->
 					<div class="item active" style="background-image: url(img/banner.jpg);">
 						<div class="carousel-caption">
-							<h3 data-wow-duration="1000ms" class="wow slideInLeft animated">Welcome</span> to</h3>
-							<h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated"><span>Seedha Saadha !</span></h2>
+							<h3 data-wow-duration="1000ms" class="wow slideInLeft animated" id="welcomeText">Welcome</span> to</h3>
+							<h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated" id="channelName"><span>Seedha Saadha !</span></h2>
 							
-							<p data-wow-duration="1000ms" class="wow slideInRight animated">Making the complex simpler</p>
+							<p data-wow-duration="1000ms" class="wow slideInRight animated"  id="captionName">Making the complex simpler</p>
 							<h2>
 							<a href="https://www.youtube.com/channel/UCpXtwwrdCrSim2WVTsDc6Xg?view_as=subscriber" target="_blank"><i class="fa fa-youtube-play" style="color:#ffffff;"></i></a>
 						</h2>
@@ -156,11 +156,30 @@
         <script src="js/jquery-countTo.js"></script>
 		<!-- jquery.appear -->
         <script src="js/jquery.appear.js"></script>
-		<!-- Contact form validation -->
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
-		<!-- Google Map -->
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<!-- For Language Change -->
+		<script>
+		$(document).ready(function(){
+		    $("#languageText").click(function(){
+		    	//change to English
+		    	if($("#languageText").text() === "English"){
+		    		$("#titleName").html($("#titleName").html().replace("सीधा सादा", "Seedha Saadha"));
+		    		$("#welcomeText").html($("#welcomeText").html().replace("नमस्ते !  ये है", "Welcome to"));
+			        $("#channelName").html($("#channelName").html().replace("सीधा सादा !", "Seedha Saadha !"));
+			       $("#captionName").html($("#captionName").html().replace("जटिल चीजों को सीधे सादे शब्दों में", "Making the complex simpler"));
+			        $("#languageText").html($("#languageText").html().replace("English", "हिंदी में"));
+		    	}
+		    	//change to Hindi
+		    	else if($("#languageText").text() === "हिंदी में"){
+		    		$("#titleName").html($("#titleName").html().replace("Seedha Saadha", "सीधा सादा"));
+		    		$("#welcomeText").html($("#welcomeText").html().replace("Welcome to", "नमस्ते !  ये है"));
+			        $("#channelName").html($("#channelName").html().replace("Seedha Saadha !", "सीधा सादा !"));
+			        $("#captionName").html($("#captionName").html().replace("Making the complex simpler", "जटिल चीजों को सीधे सादे शब्दों में"));
+			        $("#languageText").html($("#languageText").html().replace("हिंदी में", "English"));
+		    	}
+		    });
+		});
+		</script>
+
 		<!-- jquery easing -->
         <script src="js/jquery.easing.min.js"></script>
 		<!-- jquery easing -->
